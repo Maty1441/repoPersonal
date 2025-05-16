@@ -1,0 +1,16 @@
+Clonar:
+
+git clone "url"
+
+Borrar:
+
+git rm nombre_archivo
+
+Añadir:
+
+git add .
+git commit -m "comentario
+
+Hacer commit:
+
+git push origin main
