@@ -14,12 +14,21 @@ chattr [+- opcion] archivo o directorio
 
 -----------------------------------------
 
-chattr + a (Permite agregar algo sin modificar el resto)
+chattr + a (Permite agregar algo sin modificar el resto).
 
-chattr + A (No atime: Permite agregar algo sin modificar la fecha de ultima modificacion o creación.)
+chattr + A (No atime: Permite agregar algo sin modificar la fecha de ultima modificacion o creación).
 
-chattr + d (No dump: No permite respaldar el archivo o carpeta.)
+chattr + d (No dump: No permite respaldar el archivo o carpeta).
 
-chattr + D (Directorio sincroniza al disco: Todos los datos que pasan por la ram se guardan en el disco duro.)
+chattr + D (Directorio sincroniza al disco: Todos los datos que pasan por la ram se guardan en el disco duro instantaneamente).
 
-chattr + 
+chattr + i (Inmutable:).
+
+chattr + s (Se sobrescribe con 0 cuando se borra).
+
+chattr + S (Archivo sincroniza al disco).
+
+chattr + u (Imborrable)
+
+-----------------------------------------
+
