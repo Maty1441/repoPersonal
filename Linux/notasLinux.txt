@@ -1,0 +1,25 @@
+Notas Linux 20-05-25
+-----------------------------------------
+
+"lsattr" -> Muestra los permisos
+(excusivo de root)
+
+"chattr" -> Cambia los permisos
+(excusivo de root)
+
+
+lsattr [opciones] directorio
+
+chattr [+- opcion] archivo o directorio
+
+-----------------------------------------
+
+chattr + a (Permite agregar algo sin modificar el resto)
+
+chattr + A (No atime: Permite agregar algo sin modificar la fecha de ultima modificacion o creación.)
+
+chattr + d (No dump: No permite respaldar el archivo o carpeta.)
+
+chattr + D (Directorio sincroniza al disco: Todos los datos que pasan por la ram se guardan en el disco duro.)
+
+chattr + 
