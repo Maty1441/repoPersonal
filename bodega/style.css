@@ -7,6 +7,11 @@ body {
     color: whitesmoke;
 }
 
+.body-quienes-somos {
+    height: 100%;
+    min-height: 100vh;
+}
+
 h1{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
@@ -71,7 +76,7 @@ div{
 }
 
 table {
-    width: 75%;
+    width: 60%;
     margin: 0 auto 2em auto;
     border-collapse: collapse;
     background: rgba(255,255,255,0.75);
@@ -97,7 +102,8 @@ form {
     background: rgba(255,255,255,0.75);
     border-radius: 8px;
     padding: 2em;
-    text-shadow: 2px 2px 4px black;;
+    border: 2px solid purple;
+    text-shadow: 2px 2px 4px black;
 }
 
 form label {
@@ -147,4 +153,14 @@ button a{
 
 footer{
     text-align: center;;
+}
+
+article p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.05em;
+    text-align: center;
+    padding: 2.5em;
+    border: 2px solid purple;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.5);
 }
