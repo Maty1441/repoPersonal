@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" class="css">
+    <title>Ferretería El Tornillo Feliz</title>
+</head>
+<body>
+    <header>
+        <h1>Ferretería El Tornillo Feliz SRL</h1>
+    </header>
+
+    <nav>
+        <ul id="menu">
+            <li><a href="index.html">Página principal</a></li>
+            <li><a href="quienes-somos.html">Quienes somos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    
+    <ul class="servicios">
+        <h2>Servicios</h2>
+        <li><p>Venta de herramientas</p></li>
+        <li><p>Entrega a domicilio</p></li>
+        <li><p>Reparación de herramientas eléctricas</p></li>
+    </ul>
+
+    <section>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Disponibilidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Martillo</td>
+                    <td>$1500</td>
+                    <td>En stock</td>
+                </tr>
+                <tr>
+                    <td>Destornillador</td>
+                    <td>$800</td>
+                    <td>En stock</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <form>
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+
+            <label for="telefono">Teléfono:</label><br>
+            <input type="tel" id="telefono" name="telefono" required><br><br>
+
+            <label for="consulta">Consulta:</label><br>
+            <textarea id="consulta" name="consulta" rows="4" cols="40" required></textarea><br><br>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2023 Ferretería El Tornillo Feliz SRL</p>
+    </footer>
+</body>
+</html>
