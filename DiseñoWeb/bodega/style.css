@@ -1,7 +1,7 @@
 body {
     background:
-        linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), /* capa negra semitransparente */
-        url("/assets/pexels-david-bartus-43782-442116.webp");
+        linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
+        url("assets/pexels-david-bartus-43782-442116.webp");
     background-size: cover;
     background-position: center;
     color: whitesmoke;
