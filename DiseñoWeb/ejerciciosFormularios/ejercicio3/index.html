@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Encuesta de Satisfacción</legend>
+    <form>
+        <label>Nombre:
+            <input type="text">
+        </label><br>
+        <label>Correo Electronico:
+            <input type="email">
+        </label><br>
+        <label>Producto o Servicio Utilizado:</label>
+            <input list="opciones" id="opcion">
+        <datalist id="opciones">
+                <option value="opcion1"></option>
+                <option value="opcion2"></option>
+                <option value="opcion3"></option>
+                <option value="opcion4"></option>
+            </datalist><br>
+        
+        <label>Calificación:
+            <input type="radio"> 1
+            <input type="radio"> 2
+            <input type="radio"> 3
+            <input type="radio"> 4
+            <input type="radio"> 5
+        </label><br>
+
+        <label for="comentarios">Comentaios Adicionales:
+            <textarea id="comentarios" name="comentarios" ></textarea>
+        </label><br>
+        </fieldset><br>
+        <button type="submit">Enviar Encuesta</button>
+    </form>
+</body>
+</html>

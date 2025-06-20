@@ -1,0 +1,31 @@
+body{
+    background-color: whitesmoke;
+}
+
+fieldset{
+    border-color: skyblue;
+    width: 60%;
+    margin: auto;
+    border-radius: 1em;
+}
+
+legend{
+    font-size: 1.25em;
+    color: darkred;
+    text-decoration: underline;
+}
+
+label{
+    font-size: 1em;
+    color: darkolivegreen;
+}
+
+button {
+    background-color: skyblue;
+    color: black;
+    font-size: .8em;
+    border-radius: .5em;
+    padding: .85em;
+    margin: auto;
+    display: block; /* Add this */
+}
