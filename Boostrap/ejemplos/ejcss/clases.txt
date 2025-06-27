@@ -1,0 +1,11 @@
+class = 
+
+text-left 
+text-center 
+text-end
+
+text-lowercase
+text-uppercase
+text-capitalize
+
+text-decoration-none
