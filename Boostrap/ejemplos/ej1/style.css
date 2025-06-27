@@ -1,5 +1,4 @@
 h1{
-    text-align: center;
     color: hsl(0, 100%, 50%);
 }
 
@@ -47,6 +46,9 @@ article[class^="col-"] {
 .col-35 { background-color: hsl(340, 100%, 50%); }
 .col-36 { background-color: hsl(350, 100%, 50%); }
 
+table{
+    margin-top: 1em;
+}
 
 .card {
     margin-left: auto;
@@ -72,4 +74,16 @@ article[class^="col-"] {
     margin-left: auto;
     margin-right: auto;
     display: block;
+}
+
+#carouselExample {
+    max-width: 20em; /* Ajusta el valor según lo que necesites */
+    margin: 2em auto;
+}
+
+#carouselExample img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
