@@ -1,0 +1,75 @@
+h1{
+    text-align: center;
+    color: hsl(0, 100%, 50%);
+}
+
+article[class^="col-"] {
+    flex: 0 0 2.777%; /* 100% / 24 columnas ≈ 4.16% */
+    max-width: 4.16%;
+    padding: 0;
+    margin: 0;
+}
+
+.col-1  { background-color: hsl(0, 100%, 50%); }
+.col-2  { background-color: hsl(10, 100%, 50%); }
+.col-3  { background-color: hsl(20, 100%, 50%); }
+.col-4  { background-color: hsl(30, 100%, 50%); }
+.col-5  { background-color: hsl(40, 100%, 50%); }
+.col-6  { background-color: hsl(50, 100%, 50%); }
+.col-7  { background-color: hsl(60, 100%, 50%); }
+.col-8  { background-color: hsl(70, 100%, 50%); }
+.col-9  { background-color: hsl(80, 100%, 50%); }
+.col-10 { background-color: hsl(90, 100%, 50%); }
+.col-11 { background-color: hsl(100, 100%, 50%); }
+.col-12 { background-color: hsl(110, 100%, 50%); }
+.col-13 { background-color: hsl(120, 100%, 50%); }
+.col-14 { background-color: hsl(130, 100%, 50%); }
+.col-15 { background-color: hsl(140, 100%, 50%); }
+.col-16 { background-color: hsl(150, 100%, 50%); }
+.col-17 { background-color: hsl(160, 100%, 50%); }
+.col-18 { background-color: hsl(170, 100%, 50%); }
+.col-19 { background-color: hsl(180, 100%, 50%); }
+.col-20 { background-color: hsl(190, 100%, 50%); }
+.col-21 { background-color: hsl(200, 100%, 50%); }
+.col-22 { background-color: hsl(210, 100%, 50%); }
+.col-23 { background-color: hsl(220, 100%, 50%); }
+.col-24 { background-color: hsl(230, 100%, 50%); }
+.col-25 { background-color: hsl(240, 100%, 50%); }
+.col-26 { background-color: hsl(250, 100%, 50%); }
+.col-27 { background-color: hsl(260, 100%, 50%); }
+.col-28 { background-color: hsl(270, 100%, 50%); }
+.col-29 { background-color: hsl(280, 100%, 50%); }
+.col-30 { background-color: hsl(290, 100%, 50%); }
+.col-31 { background-color: hsl(300, 100%, 50%); }
+.col-32 { background-color: hsl(310, 100%, 50%); }
+.col-33 { background-color: hsl(320, 100%, 50%); }
+.col-34 { background-color: hsl(330, 100%, 50%); }
+.col-35 { background-color: hsl(340, 100%, 50%); }
+.col-36 { background-color: hsl(350, 100%, 50%); }
+
+
+.card {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-title{
+    text-align: center;
+}
+
+.card-text{
+    text-align: center;
+}
+
+.btn-primary{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
