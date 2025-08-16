@@ -1,0 +1,82 @@
+//parte 1
+
+Diferencias entre var, let y const.
+
+reasignar = var, let
+redefinir = var
+alcance = let, const
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//parte 2
+
+$("#aceptar").click(hace);  ( $() hace referencia a jquery) (#aceptar es el id del html) ("click" es el evento que se realiza para llamar a la funcion (hace) )
+
+function hace(){ (se crea la funcion hace, vacia)
+    let num = Number($("#num").val());  (crea la variable num, con la funcion "number" se convierte la cadena de texto en numero, con #num se extrae el valor pasado por html, con la funcion .val)
+
+    $("#mensaje").html("Oh" + num); (se muestra el mensaje en el id #mensaje del html, con una cadena de texto "Oh" + la variable num)
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//parte 3
+
+Estructuras de control (controlan la ejecucion del programa)
+
+selectivas: if / switch
+
+repetitivas: while / do-while / for / foreach
+----------------------------------------------  
+    IF
+↓↓↓↓↓↓↓↓↓↓↓
+
+if(condicion){
+
+}
+----------------------------------------------
+if (condicion){
+
+}else{
+
+}
+----------------------------------------------
+if(condicion){
+
+}else{
+    if(condicion){
+    }else{
+    }
+}
+----------------------------------------------
+if(condicion1){
+
+}else if(condicion2){
+    }else if(condicion3){
+        }else if(condicion4){
+            }else{
+}
+----------------------------------------------
+
+
+    SWITCH
+  ↓↓↓↓↓↓↓↓↓↓
+
+
+switch(variable a evaluar){
+    case 0;
+    -
+    break;
+
+    case 1;
+    -
+    break;
+
+    case 2;
+    -
+    break;
+
+    case 3;
+    -
+    break;
+
+    default:
+    -
+    break;
+}
