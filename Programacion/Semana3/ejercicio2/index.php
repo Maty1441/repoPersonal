@@ -18,21 +18,24 @@
     <br>
     <button type="submit">Modificar</button>
 </form>
+ 
+<?php
+require_once("Producto.php");
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nuevoPrecio = $_POST['precio'];
+    $nuevoStock = $_POST['stock'];
 
+    // Crear una instancia de Producto
+    $producto = new Producto("Laptop", 1200.00, 5);
 
+    // Modificar el precio y el stock
+    $producto->setPrecio($nuevoPrecio);
+    $producto->setStock($nuevoStock);
+
+    // Mostrar los nuevos valores
+    echo "Nuevo Precio: " . $producto->getPrecio() . "<br>";
+    echo "Nuevo Stock: " . $producto->getStock() . "<br>";
+}
+?>
 </body>
 </html>
-
-<?php
-
-require_once("Producto.php");
-
-$nombre = "Laptop";
-$precio = 1200.00;
-$stock = 5;
-
-$hola = new Producto($nombre, $precio, $stock);
-
-echo $hola->getNombre() . "<br>";
-echo $hola->getPrecio() . "<br>";
-echo $hola->getStock() . "<br>";

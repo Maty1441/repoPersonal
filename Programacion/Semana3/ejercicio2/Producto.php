@@ -13,11 +13,11 @@ function __construct(string $nombre, float $precio, int $stock) {
     $this->stock = $stock;
 }
 
-public function modPrecio(float $nuevoPrecio): void {
+    public function setPrecio(float $nuevoPrecio): void {
         $this->precio = $nuevoPrecio;
     }
 
-    public function modStock(int $nuevoStock): void {
+    public function setStock(int $nuevoStock): void {
         $this->stock = $nuevoStock;
     }
 
@@ -28,12 +28,6 @@ public function modPrecio(float $nuevoPrecio): void {
     public function getStock(): int {
         return $this->stock;
     }
-
-    public function getNombre(): string {
-        return $this->nombre;
-    }
-
-    
 
 }
 ?>

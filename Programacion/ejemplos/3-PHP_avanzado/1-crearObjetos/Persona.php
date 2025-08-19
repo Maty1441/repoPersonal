@@ -3,9 +3,9 @@
 class Persona {
 
 //ATRIBUTOS
-private $ci;
-private $nombre;
-private $apellido; 
+public $ci;
+public $nombre;
+public $apellido; 
 
 
 function __construct(string $ci, string $nombre, string $apellido){
