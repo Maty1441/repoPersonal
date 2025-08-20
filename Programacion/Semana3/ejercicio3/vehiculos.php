@@ -15,7 +15,7 @@ public function __construct(string $marca, string $modelo, int $año, float $kil
 }
 
 public function actualizarKilometraje(float $kilometraje): void {
-    $this->kilometraje += $kilometraje; // Suma al kilometraje actual
+    $this->kilometraje = $kilometraje; // Suma al kilometraje actual
 }
 
     public function getKilometraje(): float {

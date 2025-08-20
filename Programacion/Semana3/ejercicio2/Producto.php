@@ -7,11 +7,15 @@ private $precio;
 private $stock;
 private $productos;
 
-function __construct(string $nombre, float $precio, int $stock) {
-    $this->nombre = $nombre;
-    $this->precio = $precio;
-    $this->stock = $stock;
-}
+    function __construct(string $nombre, float $precio, int $stock) {
+        $this->nombre = $nombre;
+        $this->precio = $precio;
+        $this->stock = $stock;
+    }
+
+    public function getProducto(): string {
+        return "Producto: " . $this->nombre . "<br> Precio: " . $this->precio . "<br> Stock: ". $this->stock;
+    }
 
     public function setPrecio(float $nuevoPrecio): void {
         $this->precio = $nuevoPrecio;
