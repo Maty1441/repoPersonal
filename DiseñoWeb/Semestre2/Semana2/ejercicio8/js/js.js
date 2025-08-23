@@ -1,26 +1,13 @@
 
-$("#verificar").click(calcularViaje);
+$("#verificar").click(verificarDia);
 
-function calcularViaje() {
-    let millas = Number($("#millas").val());
-    let planPlus = $("#planPlus").is(":checked") ? 1 : 0;
+function verificarDia(){
 
-    let totalMillas = planPlus ? millas * 2 : millas;
+    let dia = $("#dia").val().toLowerCase();
 
-    if (totalMillas >= 60000) {
-        $("#resultado").text("Su viaje tiene destino Europa");
-    } else if (totalMillas >= 30000) {
-        $("#resultado").text("Su viaje tiene destino America del Norte");
-    } else if (totalMillas >= 15000) {
-        $("#resultado").text("Su viaje tiene destino America del Sur");
+    if (dia == "lunes") {
+        $("#resultado").text("El dia es Lunes");
     } else {
-        $("#resultado").text("Aun no tiene saldo suficiente para un viaje");
+        $("#resultado").text("No es Lunes");
     }
 }
-
-
-
-
-
-
-

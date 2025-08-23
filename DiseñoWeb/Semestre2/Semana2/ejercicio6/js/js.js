@@ -3,17 +3,12 @@ $("#verificar").click(verificarNumero);
 
 function verificarNumero(){
 
+    let nombre = $("#nombre").val();
     let num = Number($("#numero").val());
 
-    if (num % 2 == 0 && num > 0) {
-        $("#resultado").text("El numero es par y positivo");
-    } else if (num % 2 == 0 && num < 0) {
-        $("#resultado").text("El numero es par y negativo");
-    } else if (num % 2 != 0 && num > 0) {
-        $("#resultado").text("El numero es impar y positivo");
-    } else if (num % 2 != 0 && num < 0) {
-        $("#resultado").text("El numero es impar y negativo");    
+    if (num >= 18) {
+        $("#resultado").text(nombre + " es mayor de edad");
     } else {
-        $("#resultado").text("El numero es cero");
+        $("#resultado").text(nombre + " es menor de edad");
     }
 }

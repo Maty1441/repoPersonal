@@ -5,13 +5,9 @@ function verificarNumero(){
 
     let num = Number($("#numero").val());
 
-    if (num == 10) {
-        $("#resultado").html("El número es 10.");
-    } else if (num < 10) {
-        $("#resultado").html("El número es menor a 10.");
-    } else if (num > 10) {
-        $("#resultado").html("El número es mayor a 10.");
+    if (num % 2 == 0) {
+        $("#resultado").text("El número es par");
     } else {
-        $("#resultado").html("El número es 0.");
+        $("#resultado").text("El número es impar");
     }
 }

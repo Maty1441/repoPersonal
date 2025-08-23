@@ -1,13 +1,19 @@
 
-$("#verificar").click(verificarDia);
+$("#verificar").click(verificarNumero);
 
-function verificarDia(){
+function verificarNumero(){
 
-    let dia = $("#dia").val().toLowerCase();
+    let num = Number($("#numero").val());
 
-    if (dia == "lunes") {
-        $("#resultado").text("El dia es Lunes");
+    if (num % 2 == 0 && num > 0) {
+        $("#resultado").text("El numero es par y positivo");
+    } else if (num % 2 == 0 && num < 0) {
+        $("#resultado").text("El numero es par y negativo");
+    } else if (num % 2 != 0 && num > 0) {
+        $("#resultado").text("El numero es impar y positivo");
+    } else if (num % 2 != 0 && num < 0) {
+        $("#resultado").text("El numero es impar y negativo");    
     } else {
-        $("#resultado").text("No es Lunes");
+        $("#resultado").text("El numero es cero");
     }
 }
