@@ -1,0 +1,24 @@
+estructuras repetitivas:
+
+
+while:
+
+let veces = 1;
+
+while (veces <= 6){
+    console.log(veces);
+    veces++;
+}
+
+do while
+
+do{
+    console.log(veces);
+    veces++;
+} while (veces <= 6);
+
+for
+
+for(let veces=!; veces <= 6; veces++){
+    console.log(veces);
+}
