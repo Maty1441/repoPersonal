@@ -1,0 +1,46 @@
+(Siendo administrativo) A)
+
+APP A:
+
+el sistema va a tener camara y sistema de entrada/salida
+
+si el log es exitoso toma foto, sino no.
+
+A) Cedula - Definir el rol que
+B) Codigo -  estoy logueando
+
+C) Huella (opcional)
+
+-----------------------------------------------------------------------------------------
+
+APP B
+
+(Backoffice)  --->  (Dashboard)
+
+en el dashboard:
+
+1) Filtros -> buscar una persona / trabajador  
+*ver sus entradas
+*ver sus salidas
+*su horario de trabajo
+*exportar horarios
+*datos personales
+
+2) Ausentismo -> ingresos incorrectos
+*proximo ingreso: mostrar aviso
+
+-----------------------------------------------------------------------------------------
+
+(Siendo trabajador) B )
+
+-Ver entradas y salidas
+-Ver mi horario-
+-Ver incidentes
+-Ver datos personales
+-Generar un reclamo
+
+-----------------------------------------------------------------------------------------
+
+(Siendo desarrollador) C)
+
+Control total del sistema

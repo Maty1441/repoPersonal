@@ -4,7 +4,7 @@ class Alumno{
 
     private $nombre;
     private $notas = [];
-    private $promedio = 0;
+    private $promedio;
 
     public function __construct($nombre){
         $this->nombre = $nombre;
@@ -13,15 +13,16 @@ class Alumno{
 
     public function agregarNota($nota){
         $this->notas[] = $nota;
-        $this->actualizarPromedio();
     }
-     private function actualizarPromedio(){
-        if (count($this->notas) > 0) {
+    
+     public function actualizarPromedio(){
+        if (empty($this->notas) == false) {
             $this->promedio = array_sum($this->notas) / count($this->notas);
         } else {
             $this->promedio = 0;
         }
     }
+
     //array_sum — Suma todos los valores de un array
     //count — Cuenta cuantas notas hay en el array
 

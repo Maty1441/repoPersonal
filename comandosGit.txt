@@ -14,3 +14,9 @@ git commit -m "comentario
 Hacer commit:
 
 git push origin main
+
+
+
+clase rsh
+
+.ssh>ssh-keygen.exe -t rsa
