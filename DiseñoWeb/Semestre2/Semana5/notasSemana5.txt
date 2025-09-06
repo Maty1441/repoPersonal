@@ -1,0 +1,43 @@
+Metodo -> procedimiento 
+Metodo -> funcion (1 funcion = 1 responsabilidad)
+
+Funcion:
+---------------------------------------------
+*Bloque de codigo que tiene un nombre
+
+-Puede o no recibir datos
+-Retornar (return) un valor
+- Ejemplo:
+
+function suma(){
+    let resultado = 3+38;
+    return resultado;
+}
+
+o
+
+function suma(a,b){
+    let resultado = a+b;
+    return resultado;
+}
+
+o
+
+function suma(a,b){
+    return a+b;
+}
+---------------------------------------------
+
+Para llamarla:
+
+suma();
+suma(8,19);
+suma(num1,num2);
+
+Ejemplo:
+
+console.log(suma(8,38));
+
+o
+
+console.log(suma(num1,num2));
