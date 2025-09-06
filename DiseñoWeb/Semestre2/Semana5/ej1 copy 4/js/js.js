@@ -11,7 +11,7 @@ function tomarDatos(){
 function calcularAreaTriangulo(base, altura){
 
     let area;
-    let error = "Los valores estan permitidos"
+    let error = "Los valores no estan permitidos"
 
     if(base > 0 && altura > 0){
         area = base * altura / 2;
