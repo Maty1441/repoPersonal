@@ -12,7 +12,7 @@ $_SESSION['users'] = [
     ['user' => 'josefina', 'password' => '1234567890'],
     ['user' => 'guillermo', 'password' => '12345678901'],
     ['user' => 'sergio', 'password' => '123456789012'],
-    ['user' => 'rodrigo', 'password' => '1234567890123']
+    ['user' => 'OLA', 'password' => 'OLA']
 ];
 //echo "<pre>";
 //var_dump($_SESSION['users']);

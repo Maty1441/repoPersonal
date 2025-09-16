@@ -1,5 +1,6 @@
 <?php
-session_start();
+
+ session_start();
 
 // Declarar el arreglo asociativo con múltiples usuarios con contraseñas hasheadas
 $_SESSION['users'] = [
