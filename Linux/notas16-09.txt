@@ -1,0 +1,67 @@
+Memoria Swap
+
+EJs:
+sintaxis: mkswap + ruta
+
+crear -> mkswap /dev/hda2
+
+activar -> swapon /dev/hda2
+           
+desactiva + borra -> swapoff /dev/hda2
+----------------------------------------------------------------------------------
+BACKUPS / RESPALDOS
+
+Respaldo total: Duplica toda la informacion (como una snapshot)
+Respaldo incremental: solamente se respalda lo que se modifico 
+
+dump: hace el backup
+restore: manda el backup a PEPE (ruta de donde se hizo el backup)
+
+EJs: 
+sintaxis: dump -0aj + ruta del respaldo + que es lo que respaldo
+
+dump -0aj /tmp/mio /home/PEPE
+
+dump -1aj -f /tmp/mio /home/PEPE
+
+restore -if /tmp/mio
+----------------------------------------------------------------------------------
+rsync
+se puede trabajar con cualquier protocolo de forma independiente
+
+sintaxis: rsync -av + que es lo que respaldo + donde respaldarlo
+
+rsync -av /home/PEPE 192.168.1.2:home/JUAN
+----------------------------------------------------------------------------------
+dd
+mala precision, 
+puede reconocer algunos fileSystems y otros no
+
+EJs:
+
+sintaxis: dd if=/dev/sda of=/dev/sdb
+----------------------------------------------------------------------------------
+tar
+
+sintaxis: tar + donde respaldar + que es lo que respaldo
+
+tar -pnf
+----------------------------------------------------------------------------------
+INODOS Y DENTRIES
+
+un inodo es un lugar del disco que me da las caracteristicas del archivo
+cada inodo ocupa 16kb
+cada inodo tiene: 
+un numero de inodo, 
+propietario del archivo, 
+punteros que indican la cantidad de bloques que tiene el archivo, 
+marcas de tiempo:
+"ctime" (hora que se cambio por ultima vez el inodo) 
+"mtime"(la hora que se modifico por ultima vez el contenido)
+"atime"(la hora en que se accedio por ultima vez al archivo)
+tabla de direccionamiento
+datos de control de integridad (lo dice con 0 y 1, muestra si el archivo no esta corrupto, roto o le falta algo).  
+
+
+
+
