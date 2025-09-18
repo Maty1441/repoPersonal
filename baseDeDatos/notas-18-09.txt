@@ -1,0 +1,58 @@
+Parcial 25/09/25
+--------------------------------------------------------------------------------------------------------------------
+DDL:
+
+CREATE DATABASE prueba;
+USE prueba;
+CREATE TABLE Persona (CI int not null Primary Key, Nombre varchar(100), F.Nac DATE, ID_E int);
+ALTER TABLE ADD ...
+--------------------------------------------------------------------------------------------------------------------
+DML:
+
+INSERT INTO x VALUES (1, "Tester");
+INSERT INTO Persona VALUES (2687077, "Rober Franco", "1973-05-16");
+DELETE FROM Persona WHERE CI = 2687077;
+UPDATE PERSONA SET Nombre = "Rober Franco" WHERE CI=2687077;
+--------------------------------------------------------------------------------------------------------------------
+SQL:
+
+SELECT * FROM Persona;
+
+Join: SELECT p.ci, p.nombre FROM persona p JOIN especialidades e ON p id_e = e id WHERE e.nombre = "Tester";
+
+Subconsulta: SELECT ci, nombre FROM persona WHERE id_e IN (SELECT id FROM especialidades WHERE nombre = "Tester");
+
+Equireunión: SELECT p.ci, p.nombre FROM persona p, especialidades e WHERE p.id_e = e_id and e.nombre = "Tester";
+--------------------------------------------------------------------------------------------------------------------
+VISTAS:
+                    TABLA VIRTUAL
+
+1-Crear
+
+CREATE VIEW V_PERSONA (CI, NACIMIENTO) AS SELECT CI, F_NAC FROM PERSONA;
+
+2-Consultar
+
+SELECT * FROM V_PERSONA;
+
+3-Borrar
+
+DROP VIEW V_PERSONA
+--------------------------------------------------------------------------------------------------------------------
+Pracico Vistas:
+
+1.1 Promedio notas por estudiante
+
+- create view v_promedio(nombre, promedio) as SELECT e.nombre, AVG(c.nota) FROM estudiantes e, calificaciones c WHERE c.estudiante_id = e.id;
+
+1.2 Consultar Vista
+
+- SELECT * FROM v_promedio;
+
+2.1 Estudiantes destacados
+
+- create view destacados(nombre, promedio) as SELECT e.nombre, AVG(c.nota) FROM estudiantes e, calificaciones c WHERE c.nota > 7; 
+
+2.2 Consultar Vista
+
+-
