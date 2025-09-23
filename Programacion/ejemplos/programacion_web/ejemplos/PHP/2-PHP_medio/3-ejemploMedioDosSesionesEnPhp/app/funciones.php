@@ -12,6 +12,7 @@ function existeUsuario($username, $password) {
     return false;
 }
 
+
 // Función para agregar un trabajador al arreglo global
 function agregarTrabajador($nombre, $posicion, $email) {
     $_SESSION['trabajadores'][] = [
@@ -20,6 +21,27 @@ function agregarTrabajador($nombre, $posicion, $email) {
         'email' => $email
     ];
 }
+
+
+function borrarTrabajador($email) {
+    if(!isset($_SESSION['trabajadores'])){
+        return false;
+    }
+    foreach ($_SESSION['trabajadores'] as $user => $trabajador) {
+        if ($trabajador['email'] === $email) {
+            unset($_SESSION['trabajadores'][$user]);
+            $_SESSION['trabajadores'] = array_values($_SESSION['trabajadores']);
+            return true;
+        }
+    }
+    return false;
+    echo "usuario no encontrado";
+}
+
+function modificarTrabajador($posicion){
+    
+}
+
 // USUARIO -> los usuarios que uso para iniciar sesión 
 // TRABAJADOR -> Las personas cargadas en el sistema
 // 1 - Función para buscar un trabajador con su CI y mostrar sus datos.
