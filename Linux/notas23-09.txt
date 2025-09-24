@@ -1,0 +1,78 @@
+Enclaces / Links
+
+cuando creamos un acceso directo en linux, creamos otro inodo que accede al mismo archivo.
+ambos estan en el mismo disco o particion.
+
+tabla:
+n1: 70 . 90
+d1: n3 . n22
+
+ln + archivo + de donde lo nombre
+
+ln n3 n22 (creo un acceso directo / otro)
+-------------------------------------------------------------------------------------------------------
+Enlace simbolico:
+
+es como si pegase un directorio a otro, cuando uno se llena el otro sigue guardando la informacion.
+no necesariamente tiene que estar en el mismo disco o particion.
+
+tabla:
+n1: n-x
+d1: 3000
+
+tabla -> inodo 3000, (con contenido 2560) -> el contenido 2560 da la direccion -> inodo 70
+
+ln -s + archivo + archivo X
+-------------------------------------------------------------------------------------------------------
+IP:
+
+IPV4:
+(   ) - (   ) - (   ) - (   )
+0-255 . 0-255 . 0-255 . 0-255
+
+con DHCP podemos dar direcciones IP a nuestro gusto.
+la mascara se usa para ocultar la direccion IP
+
+ipconfig -> windows
+ifconfig -> posix
+ipaddr
+nmcli
+
+cambiando la direcciones IP de la misma computadora se puede descargar toda la informacion de un servidor.
+-------------------------------------------------------------------------------------------------------
+CAMBIO PROVISORIO:
+
+INTERFAZ (ETH0 / ENO1)
+
+sintaxis:
+
+sudo ifconfig "INTERFAZ" nueva_ip netmask (   )
+sudo ip add "INTERFAZ" nueva_ip netmask (   )
+
+la unica diferencia entre ifconfig y ip add que uno admite mas configuraciones
+dura hasta que apague la red o la sesion.
+-------------------------------------------------------------------------------------------------------
+CAMBIO PERMANENTE:
+
+estructura para OS: debian-ubuntu-mx
+
+/etc/network/interfaces 
+-> 1 archivo con las siguientes caracteristicas:
+
+iface ETH0 inet static (sirve para identificar que tarjeta voy a modificar, *no se toca*)
+address nueva_ip (me da la direccion que voy a tener, modificable)
+netmask -> mascara (clase A = 255.0.0.0 / clase B = 255.255.0.0 / clase C = 255.255.255.0, si no hay modificacion de la mascara el valor va a ser 1)
+gateway ip_de_gateway (identifica la conexion de una red con otra)
+
+por cada tarjeta fisica voy a tener 4 filas (en debian-ubuntu-mx)
+una gateway une a 2 redes (es el camino que debe seguir una red (A) para llegar a otra red (B))
+
+estructura para OS: centos-red hat-fedora-mandrake
+(depende del nombre de la tarjeta logica de cada distribucion)
+
+/etc/sysconfig/networks_scripts/ifcfg-ems2f0:0 (depende la cantidad de tarjetas si es 0 o 1)
+device = "ens2f0:0"
+bootproto = static / enabled (depende si es una ip fija static o enabled)
+ipaddr = nueva_ip
+netmask = 255.255.255.0
+onboot = yes / no (si quiero modficar la ip tengo que poner "no")
