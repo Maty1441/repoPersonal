@@ -1,0 +1,41 @@
+2)
+Demonios / Daemons: 
+Son programas/scripts que tienen la particularidad que funcionan de 2 formas diferentes
+
+por tiempo: (como tarea programada con windows) CROND / CRON "Hora del pc"
+
+por actitud: (escucha el pulso electrico (si hay o no hay "uso") cuando se cumple una condicion determinada) "Electrica"
+
+CRONTAB comandos : 
+
+crontab -l (muestra la lista de los crontab existentes para el usuario)
+crontab -e (modifica los crontab para el usuario)
+orden: ("." = domingo) (para escribir el comando un espacio en blanco o un tab para separar los campos) (1-5 de lunes a viernes)
+MIN (00-59) | HORA (01-24) | DIA DEL MES (1-31) | MES (1-12) | DIA DE LA SEMANA (.0-6 / 1-7.) | -> comando / script
+
+salida 00 19 * * 1-5 init 0 / ruta del script
+
+(cuando trabajo con un comando recordar escribir "sh + comando")
+
+3)
+passwd (contiene el Nombre de cada usuario, con una "X" indica si tiene contraseña, UID del usuario, GID (id del grupo primario), comentario, directorio home del usuario y la shell predeterminada del usuario)
+ej: "usuario:x:uid:gid:comentario:/home/nombreUsuario:shell" 
+
+shadow (contiene el nombre de usuario, contraseña encriptada y hasheada, fecha de ultimo cambio de la contraseña, edad minima de la contraseña, edad maxima de la contraseña, periodo de aviso, periodo de inactividad, fecha de expiracion de la contraseña, reservado para uso futuro)
+ej salida: " usuario:*:20094:0:99999:7::: " 
+
+1)
+
+"/etc/fstab" contiene la informacion de los montajes de las particiones que hay en un sistema, este archivo es leido por el comando "mount" para determinar como debe montar un dispositivo o particion.
+
+formato de uso: <archivo de sistema> <punto de montaje> <tipo>
+
+archivo de sistema: particion cuyo montaje se define en la linea
+punto de montaje: ruta donde se monta la particion
+tipo: tipo de sistema de archivos que utiliza la particion
+
+otras opciones:
+
+options: opciones de montaje de la particion
+
+

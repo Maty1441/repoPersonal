@@ -1,0 +1,126 @@
+1) 
+"/etc/fstab" Es un archivo de configuración que contiene información sobre dispositivos de almacenamiento (como discos duros, particiones, CD/DVD, etc.) y cómo deben ser montados en el sistema.
+
+Cada línea del archivo /etc/fstab contiene 6 columnas:
+
+file system:    Dispositivo o partición (por ejemplo: /dev/sda1).
+mount point:    Carpeta donde se montará el sistema (por ejemplo: /).
+type:   Tipo de sistema de archivos (por ejemplo: ext4, swap, iso9660).
+options:    Opciones de montaje (como defaults, noauto, errors=remount-ro).
+dump:   Indica si debe hacerse backup con dump (0 = no, 1 = sí).
+pass:   Orden de chequeo con fsck (0 = nunca, 1 = primero, 2 = después).
+
+Opciones de montaje:
+
+auto:	Monta automáticamente en el arranque o con mount -a.
+noauto:	No se monta automáticamente. Se debe montar manualmente.
+exec:	Permite ejecutar archivos binarios desde esa partición.
+noexec:	No permite ejecutar programas desde esa partición. Útil para seguridad.
+ro:	Monta el sistema en solo lectura (read-only).
+rw:	Monta el sistema en lectura y escritura (read-write).
+user:	Permite que cualquier usuario monte el sistema de archivos.
+users:	Similar a user, pero permite que otros usuarios también desmonten el sistema.
+nouser:	Solo el root puede montar el sistema de archivos (por defecto).
+suid:	Permite usar archivos con permisos suid/sgid (ejecución con privilegios temporales).
+nosuid:	Desactiva los bits suid/sgid. Mejora seguridad.
+noatime:	No actualiza la hora de último acceso a archivos (mejora rendimiento).
+nodiratime:	No actualiza la hora de último acceso a directorios (también mejora rendimiento).
+defaults:	Usa una configuración estándar: rw, suid, dev, exec, auto, nouser, async.
+
+2)
+Para añadir una tarea al cron utilizamos los siguientes comandos:
+
+Comando para ver modificar los cron existentes: crontab -e
+
+Comando a ejecutar en el cron: " 30 * * * * sh/bin/ "
+
+3)
+El comando "passwd" contiene:
+
+Nombre de cada usuario
+Una "X" indicando si tiene contraseña
+UID del usuario
+GID
+Comentario 
+Directorio home del usuario
+Shell predeterminada del usuario
+
+Ejemplo: " usuario:x:uid:gid:comentario:/home/nombreUsuario:shell " 
+
+El comando "shadow" contiene:
+
+Nombre de usuario
+Contraseña encriptada y hasheada
+Fecha del ultimo cambio de la contraseña
+Edad minima de la contraseña
+Edad maxima de la contraseña
+Periodo de aviso
+Periodo de inactividad
+Fecha de expiracion de la contraseña
+Reservado para uso futuro
+
+Ejemplo: " usuario:*:20094:0:99999:7::: "
+
+4)
+
+8)
+20 13 * 6-8 2-5 /scripts/script-mio
+
+9)
+Supongamos que entra un usuario nuevo llamado juan.
+
+🔹 Paso 1: crear el usuario
+
+sudo useradd juan
+
+Esto crea la cuenta en /etc/passwd y /etc/shadow.
+Por defecto, la cuenta se crea sin contraseña.
+
+🔹 Paso 2: establecer que debe cambiar la contraseña en el primer login
+
+sudo passwd -e juan
+
+Explicación:
+
+passwd -e expira inmediatamente la clave actual (que está vacía o temporal).
+
+Cuando Juan entre por primera vez, el sistema le va a pedir que establezca su propia clave.
+
+
+🔹 Paso 3: configurar vencimiento de la contraseña el 31 de diciembre
+
+Usamos chage para fijar la fecha exacta:
+
+sudo chage -E 2025-12-31 juan
+
+Explicación:
+
+-E indica la fecha de expiración de la cuenta.
+
+Formato: YYYY-MM-DD.
+
+El 1 de enero del 2026 la cuenta quedará deshabilitada, a menos que el admin la reactive.
+
+🔹 Paso 4: verificar la configuración
+
+sudo chage -l juan
+
+Ejemplo de salida:
+
+Última vez que se cambió la contraseña                : Sep 30, 2025
+La contraseña expira                                  : Dec 31, 2025
+La contraseña inactiva                                : nunca
+La cuenta expira                                      : Dec 31, 2025
+Número mínimo de días entre cambios de contraseña     : 0
+Número máximo de días entre cambios de contraseña     : 90
+Número de días de aviso antes de que caduque la clave : 7
+
+Resumen:
+
+Cada usuario recibe solo su nombre de usuario del admin.
+
+Cuando entra por primera vez, el sistema lo obliga a elegir su propia contraseña.
+
+Esa contraseña o la cuenta estarán configuradas para expirar el 31/12 de este año, garantizando control y seguridad.
+
+Para implementar esto en Linux se usan principalmente los comandos useradd, passwd -e y chage.
