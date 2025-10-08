@@ -1,0 +1,5 @@
+1) mkdir, mount, (montar disco nuevo, pasar el respaldo, desmontar disco viejo)
+
+2)
+
+4) dump o rsync (clonar el disco por completo osea duplicar)
