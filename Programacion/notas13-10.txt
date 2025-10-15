@@ -1,0 +1,14 @@
+Flujo de Trabajo:
+
+usuario da click -> (vista)
+    - va la pregunta al servidor (controlador)
+        - Lo puedo responder yo 
+        - Lo tiene que responder otro
+            - La BD devuelve la informacion (modelo)
+    - Se envia la respuesta con la pagina web (vista)
+
+Actores:
+
+Vistas: Mostramos informacion que previamente se tuvo que trabajar en el servidor.
+Modelo: Maneja la logica, gestiona los datos, es codigo de programacion que se encarga de comunicarse con la base de datos.
+Controlador: Actua como intermediario entre el modelo y la vista.
