@@ -3,3 +3,9 @@ p.letra{
     color: black;
     text-align: center;;
 }
+
+p.mensaje{
+    font-size: 1.5em;
+    color: blue;
+    text-align: center;
+}
