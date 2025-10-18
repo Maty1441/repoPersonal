@@ -1,0 +1,12 @@
+Objeto
+
+- Cosa o concepto del mundo real
+- existen difrentes maneras de crear objetos
+
+ej: 
+
+function persona(nombre, edad){
+    this.nombre = nombre;
+    this.edad = edad;
+}
+------------------------------------------------------------------------------------------------------
