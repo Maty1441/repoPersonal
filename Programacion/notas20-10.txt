@@ -1,0 +1,7 @@
+procesar.php va a checkear si el usuario existe
+
+controller = logica
+models = modelaje / BD
+views = vista
+
+$variable = $_POST['formulario'] ?? '';  (' ?? "" ', si la variable viene vacia se le asigna el valor "")
