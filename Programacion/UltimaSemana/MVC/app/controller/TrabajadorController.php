@@ -54,7 +54,7 @@ class TrabajadorController {
                 //Datos importantes, reindexar el arreglo es necesario para tener mejor control
                 //De nuestra estructura de datos. array_values siempre es necesario
                 $_SESSION['trabajadores'] = array_values($_SESSION['trabajadores']);
-                echo "Trabajador eliminado correctamente.<br>";
+                header("Location: ../app/views/dashboard/inicio.html");
                 return;
             }
         }

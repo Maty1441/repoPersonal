@@ -12,6 +12,16 @@ session_start();
 // Crear instancia del controlador
 $controller = new $controllerName();
 
-// Llamar al método con los parámetros del POST
-$controller->$actionName($_POST['nombre'], $_POST['apellido'], $_POST['cedula']);
+// Ejecutar según la acción
+switch ($actionName) {
+    case 'agregarTrabajador':
+        $controller->$actionName($_POST['nombre'], $_POST['apellido'], $_POST['cedula']);
+        break;
+    case 'eliminarTrabajador':
+        $controller->$actionName($_POST['cedula']);
+        break;
+    default:
+        echo "Acción no reconocida.";
+        break;
+}
 ?>
