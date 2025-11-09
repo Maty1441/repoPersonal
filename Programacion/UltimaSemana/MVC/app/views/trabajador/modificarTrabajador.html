@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Trabajador</title>
+</head>
+<body>
+    <h1>Modificar Trabajador</h1>
+    <form action="../../controller/procesar.php" method="post">
+        <label for="id">ID del Trabajador:</label>
+        <input type="text" id="id" name="id" required><br><br>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required><br><br>
+
+        <label for="puesto">Puesto:</label>
+        <input type="text" id="puesto" name="puesto" required><br><br>
+
+        <button type="submit" name="formulario" value="modificar">Modificar Trabajador</button>
+    </form>
+</body>
+</html>
