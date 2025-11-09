@@ -9,7 +9,7 @@ class TrabajadorController {
         }
     }
 
-    public function agregarTrabajador(String $nombre, String $apellido, String $cedula): void {
+    public function agregarTrabajador(String $nombre, String $apellido, String $cedula, String $estado = "inactivo"): void {
     if (!isset($_SESSION['trabajadores'])) {
         $_SESSION['trabajadores'] = [];
     }
@@ -19,7 +19,7 @@ class TrabajadorController {
             return;
         }
     }
-    $nuevo = new TrabajadorModel($nombre, $apellido, $cedula);
+    $nuevo = new TrabajadorModel($nombre, $apellido, $cedula, $estado);
     $_SESSION['trabajadores'][] = $nuevo;
 
     header("Location: ../app/views/dashboard/inicio.html");
@@ -29,6 +29,19 @@ class TrabajadorController {
     public function verTrabajadores() {
         return $_SESSION['trabajadores'] ?? [];
     }
+
+    public function cambiarEstado(String $cedula, String $nuevoEstado): void {
+    if (!isset($_SESSION['trabajadores'])) return;
+
+    foreach ($_SESSION['trabajadores'] as $trabajador) {
+        if ($trabajador->getCedula() === $cedula) {
+            $trabajador->setEstado($nuevoEstado);
+            echo "Estado actualizado correctamente.<br>";
+            return;
+        }
+    }
+    echo "No se encontró trabajador con esa cédula.<br>";
+}
 
     public function modificarTrabajador(String $cedula, String $nuevoNombre, String $nuevoApellido): void {
         foreach ($_SESSION['trabajadores'] as $trabajador) {

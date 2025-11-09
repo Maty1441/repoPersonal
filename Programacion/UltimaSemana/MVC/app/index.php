@@ -20,6 +20,9 @@ switch ($actionName) {
     case 'eliminarTrabajador':
         $controller->$actionName($_POST['cedula']);
         break;
+    case 'cambiarEstado':
+    $controller->$actionName($_POST['cedula'], $_POST['estado']);
+    break;
     default:
         echo "Acción no reconocida.";
         break;

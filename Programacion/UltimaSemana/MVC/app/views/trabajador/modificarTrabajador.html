@@ -7,19 +7,19 @@
 </head>
 <body>
     <h1>Modificar Trabajador</h1>
-    <form action="../../controller/procesar.php" method="post">
-        <label for="id">ID del Trabajador:</label>
-        <input type="text" id="id" name="id" required><br><br>
+    <form action="../../index.php" method="post">
+        <input type="hidden" name="c" value="TrabajadorController">
+        <input type="hidden" name="a" value="cambiarEstado">
 
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required><br><br>
+        <label for="id">Cedula del Trabajador:</label>
+        <input type="text" id="cedula" name="cedula" required><br><br>
 
-        <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" name="apellido" required><br><br>
-
-        <label for="puesto">Puesto:</label>
-        <input type="text" id="puesto" name="puesto" required><br><br>
-
+        <label for="estado">Estado:</label>
+            <select estado="select" id="estado" name="estado" required>
+                <option value="activo">Activo</option>
+                <option value="inactivo">Inactivo</option> 
+                <option value="suspendido">Suspendido</option> 
+            </select><br><br>
         <button type="submit" name="formulario" value="modificar">Modificar Trabajador</button>
     </form>
 </body>

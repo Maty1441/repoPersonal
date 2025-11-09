@@ -17,12 +17,12 @@ $trabajadores = $controller->verTrabajadores();
       <table border="1" width="80%" class="table">
 	  <thead>
 	  	<tr>
-        <th>Nombre</th>
-	      <th>Apellido</th>
-	      <th>Cedula</th>
+            <th>Nombre</th>
+	        <th>Apellido</th>
+	        <th>Cedula</th>
+            <th>Estado</th>
 	  	</tr>
-	  </thead>
-              
+	  </thead>   
     <tbody>
     <?php 
         require_once("../../controller/TrabajadorController.php");
@@ -35,10 +35,11 @@ $trabajadores = $controller->verTrabajadores();
                 echo "<td>" . $trabajador->getNombre() . "</td>";
                 echo "<td>" . $trabajador->getApellido() . "</td>";
                 echo "<td>" . $trabajador->getCedula() . "</td>";
+                echo "<td>" . $trabajador->getEstado() . "</td>";
                 echo "</tr>";
             }
         } else {
-            echo "<tr><td colspan='3'>No hay trabajadores registrados</td></tr>";
+            echo "<tr><td colspan='4'>No hay trabajadores registrados</td></tr>";
         }
     ?>
     </tbody>
