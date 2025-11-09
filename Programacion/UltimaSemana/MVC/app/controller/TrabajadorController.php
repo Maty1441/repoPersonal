@@ -1,6 +1,5 @@
 <?php
-session_start();
-require_once("../models/TrabajadorModel.php");
+require_once(__DIR__ . "/../models/TrabajadorModel.php");
 
 class TrabajadorController {
 
@@ -11,26 +10,24 @@ class TrabajadorController {
     }
 
     public function agregarTrabajador(String $nombre, String $apellido, String $cedula): void {
-        foreach ($_SESSION['trabajadores'] as $trabajador) {
-            if ($trabajador->getCedula() === $cedula) {
-                echo "Ya existe un trabajador con esa cédula.<br>";
-                return;
-            }
-        }
-        $nuevo = new TrabajadorModel($nombre, $apellido, $cedula);
-        $_SESSION['trabajadores'][] = $nuevo;
-        echo "Trabajador agregado correctamente.<br>";
+    if (!isset($_SESSION['trabajadores'])) {
+        $_SESSION['trabajadores'] = [];
     }
-
-    public function verTrabajadores(): void {
-        if (empty($_SESSION['trabajadores'])) {
-            echo "No hay trabajadores registrados.<br>";
+    foreach ($_SESSION['trabajadores'] as $trabajador) {
+        if ($trabajador->getCedula() === $cedula) {
+            echo "Ya existe un trabajador con esa cédula.<br>";
             return;
         }
+    }
+    $nuevo = new TrabajadorModel($nombre, $apellido, $cedula);
+    $_SESSION['trabajadores'][] = $nuevo;
 
-        foreach ($_SESSION['trabajadores'] as $index => $trabajador) {
-            echo "[" . $index . "] " . $trabajador . "<br>";
-        }
+    header("Location: ../app/views/dashboard/inicio.html");
+    // exit();
+}
+
+    public function verTrabajadores() {
+        return $_SESSION['trabajadores'] ?? [];
     }
 
     public function modificarTrabajador(String $cedula, String $nuevoNombre, String $nuevoApellido): void {

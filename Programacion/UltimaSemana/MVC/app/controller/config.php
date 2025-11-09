@@ -1,5 +1,8 @@
 <?php
-//session_start(); Rompe el codigo
+// rompe el codigo -> session_start();
+
+// Forzar reinicio de usuarios (quitar después de primer uso)
+unset($_SESSION['users']);
 
 // Solo crear usuarios si no existen, sino tabla
 if (!isset($_SESSION['users'])) {

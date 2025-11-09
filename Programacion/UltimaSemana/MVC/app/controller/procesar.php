@@ -11,22 +11,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? '';
 
     if ($variable == 'iniciar') {
+        $encontrado = false;
         foreach ($_SESSION['users'] as $u) {
             if ($u['user'] === $user && password_verify($password, $u['password'])) {
+                $encontrado = true;
                 $_SESSION['user_role'] = 'trabajador';
                 $_SESSION['username'] = $user;
                 header('Location: ../views/dashboard/inicio.html');
-                exit();
-            } else {
-                echo "<p style='color:red;'>No se encontró el usuario o contraseña incorrecta</p>";
-                //exit();
             }
+        }
+        if (!$encontrado) {
+            echo "<p style='color:red;'>No se encontró el usuario o contraseña incorrecta</p>";
         }
         exit();
     }
     if ($variable == 'agregar') {
         header('Location: ../views/trabajador/agregarTrabajador.html');
-        exit;
+        exit();
     }
 
     if ($variable == 'modificar') {
@@ -45,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if ($variable == 'verTodos') {
-        header('Location: ../views/trabajador/verTrabajadores.html');
+        header('Location: ../views/trabajador/verTrabajadores.php');
         exit;
     }
 
