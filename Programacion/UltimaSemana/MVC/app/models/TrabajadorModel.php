@@ -30,6 +30,10 @@
             return $this->apellido;
         }
 
+        public function setApellido(String $value):void {
+            $this->apellido = $value;
+        }
+
         public function getCedula():string {
             return $this->cedula;
         }

@@ -17,6 +17,9 @@ switch ($actionName) {
     case 'agregarTrabajador':
         $controller->$actionName($_POST['nombre'], $_POST['apellido'], $_POST['cedula']);
         break;
+    case 'modificarTrabajador':
+        $controller->$actionName($_POST['cedula'], $_POST['nombre'], $_POST['apellido']);
+    break;
     case 'eliminarTrabajador':
         $controller->$actionName($_POST['cedula']);
         break;

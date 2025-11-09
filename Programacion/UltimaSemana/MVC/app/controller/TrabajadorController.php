@@ -36,8 +36,7 @@ class TrabajadorController {
     foreach ($_SESSION['trabajadores'] as $trabajador) {
         if ($trabajador->getCedula() === $cedula) {
             $trabajador->setEstado($nuevoEstado);
-            echo "Estado actualizado correctamente.<br>";
-            return;
+            header("Location: ../app/views/dashboard/inicio.html"); 
         }
     }
     echo "No se encontró trabajador con esa cédula.<br>";

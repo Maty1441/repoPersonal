@@ -43,7 +43,7 @@
                         <h5 class="card-title">Modificar estado</h5>
                         <p class="card-text">Marcar un trabajador como inactivo o suspendido.</p>
                         <form action="../../controller/procesar.php" method="post">
-                            <button class="btn btn-warning text-white" type="submit" class="btn btn-success" name="formulario" value="modificar">Modificar estado</button>
+                            <button class="btn btn-warning text-white" type="submit" class="btn btn-success" name="formulario" value="modificarEstado">Modificar estado</button>
                         </form>
                     </div>
                 </div>
@@ -90,11 +90,13 @@
 
             <!-- Salir -->
             <div class="col-md-4">
-                <div class="card border-secondary shadow-sm">
+                <div class="card border-warning shadow-sm">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Salir del Panel</h5>
-                        <p class="card-text">Cerrar sesión y volver al inicio.</p>
-                        <a href="../../controller/logout.php" class="btn btn-secondary">Salir</a>
+                        <h5 class="card-title">Modificar Trabajador</h5>
+                        <p class="card-text">Modifica los datos de un trabajador</p>
+                        <form action="../../controller/procesar.php" method="post">
+                            <button class="btn btn-warning text-white" type="submit" class="btn btn-success" name="formulario" value="modificar">Modificar Trabajador</button>
+                        </form>
                     </div>
                 </div>
             </div>

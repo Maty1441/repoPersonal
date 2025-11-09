@@ -40,6 +40,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
+    if ($variable == 'modificarEstado') {
+        header('Location: ../views/trabajador/modificarEstado.html');
+        exit;
+    }
+
     if ($variable == 'buscar') {
         header('Location: ../views/trabajador/buscarTrabajador.html');
         exit;

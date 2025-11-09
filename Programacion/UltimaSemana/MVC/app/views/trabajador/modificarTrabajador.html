@@ -9,17 +9,18 @@
     <h1>Modificar Trabajador</h1>
     <form action="../../index.php" method="post">
         <input type="hidden" name="c" value="TrabajadorController">
-        <input type="hidden" name="a" value="cambiarEstado">
+        <input type="hidden" name="a" value="modificarTrabajador">
 
-        <label for="id">Cedula del Trabajador:</label>
-        <input type="text" id="cedula" name="cedula" required><br><br>
+        <label for="id">Cedula del Trabajador a modificar:</label>
+        <input type="text" id="cedula" name="cedula" required><br><br><br>
+        
 
-        <label for="estado">Estado:</label>
-            <select estado="select" id="estado" name="estado" required>
-                <option value="activo">Activo</option>
-                <option value="inactivo">Inactivo</option> 
-                <option value="suspendido">Suspendido</option> 
-            </select><br><br>
+        <label for="id">Nuevo nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="id">Nuevo Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required><br><br>
+
         <button type="submit" name="formulario" value="modificar">Modificar Trabajador</button>
     </form>
 </body>
