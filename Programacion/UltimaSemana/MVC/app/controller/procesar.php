@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if ($variable == 'buscar') {
-        header('Location: ../views/trabajador/verTrabajador.html');
+        header('Location: ../views/trabajador/buscarTrabajador.html');
         exit;
     }
 

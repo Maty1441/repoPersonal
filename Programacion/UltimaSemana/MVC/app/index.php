@@ -21,7 +21,13 @@ switch ($actionName) {
         $controller->$actionName($_POST['cedula']);
         break;
     case 'cambiarEstado':
-    $controller->$actionName($_POST['cedula'], $_POST['estado']);
+        $controller->$actionName($_POST['cedula'], $_POST['estado']);
+    break;
+    case 'buscarPorCedula':
+        $controller->$actionName($_POST['cedula']);
+    break;
+    case 'buscarPorNombre':
+        $controller->$actionName($_POST['nombre']);
     break;
     default:
         echo "Acción no reconocida.";

@@ -79,5 +79,30 @@ class TrabajadorController {
         $_SESSION['trabajadores'] = [];
         echo "Se ha limpiado la lista de trabajadores.<br>";
     }
+
+    public function buscarPorCedula(String $cedula) {
+        foreach ($_SESSION['trabajadores'] as $trabajador) {
+            if ($trabajador->getCedula() === $cedula) {
+                $_SESSION['trabajador_encontrado'] = $trabajador;
+                header("Location: ../app/views/trabajador/verTrabajador.php");
+                exit();
+            }
+        }
+        echo "No se encontró ningún trabajador con esa cédula.<br>";
+        return null;
+    }
+
+    public function buscarPorNombre(String $cedula) {
+        foreach ($_SESSION['trabajadores'] as $trabajador) {
+            if ($trabajador->getNombre() === $cedula) {
+                $_SESSION['trabajador_encontrado'] = $trabajador;
+                header("Location: ../app/views/trabajador/verTrabajador.php");
+                exit();
+            }
+        }
+        echo "No se encontró ningún trabajador con este nombre.<br>";
+        return null;
+    }
+
 }
 ?>
