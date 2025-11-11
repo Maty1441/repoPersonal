@@ -1,0 +1,8 @@
+CON UN ATRIBUTO "ROL" SE COMO REDIRIGIR AL USUARIO SEGUN EL ROL, SI VA A DASHBOARD O A PANEL TRABAJADOR
+
+ESTRUCTURA SEGUN PROPIO CRITERIO
+
+query hace la consulta ($sql)
+$resultado = array que devuelve la consulta
+
+config -> para guardar database.php y index.php
