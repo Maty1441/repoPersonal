@@ -17,20 +17,20 @@ switch ($actionName) {
         $controller->$actionName($_POST['ci'], $_POST['fnac'], $_POST['nombre'], $_POST['apellido'], $_POST['email'], $_POST['password'], $_POST['activo']);
         break;
     case 'modificarTrabajador':
-        $controller->$actionName($_POST['cedula'], $_POST['nombre'], $_POST['apellido']);
-    break;
-    case 'eliminarTrabajador':
-        $controller->$actionName($_POST['cedula']);
+        $controller->$actionName($_POST['ci'], $_POST['nombre'], $_POST['apellido']);
+        break;
+    case 'borrar':
+        $controller->$actionName($_POST['ci']);
         break;
     case 'cambiarEstado':
-        $controller->$actionName($_POST['cedula'], $_POST['estado']);
-    break;
+        $controller->$actionName($_POST['ci'], $_POST['activo']);
+        break;
     case 'buscarPorCedula':
-        $controller->$actionName($_POST['cedula']);
-    break;
+        $controller->$actionName($_POST['ci']);
+        break;
     case 'buscarPorNombre':
         $controller->$actionName($_POST['nombre']);
-    break;
+        break;
     default:
         echo "Acción no reconocida.";
         break;

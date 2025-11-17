@@ -87,11 +87,42 @@
         }
     }
 
+    public function modificarEstado(String $ci, String $activo = "0") {
+
+        //pendiente
+
+    }
+
+    public function borrarTrabajador(String $ci) {
+        $sql = "DELETE FROM persona WHERE CI = '$ci'";
+        $resultado = $this->db->query($sql);
+
+        if ($resultado) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function verTrabajadores() {
         $sql = "SELECT * FROM persona";
         $resultado = $this->db->query($sql);
 
         // devolver todos los registros como array asociativo
+        return $resultado->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function buscarCedula(String $ci) {
+        $sql = "SELECT * FROM persona WHERE CI = '$ci'";
+        $resultado = $this->db->query($sql);
+
+        return $resultado->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function buscarNombre(String $nombre) {
+        $sql = "SELECT * FROM persona WHERE CI = '$nombre'";
+        $resultado = $this->db->query($sql);
+
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }
 

@@ -3,6 +3,8 @@ require_once(dirname(dirname(__FILE__)) . '/models/TrabajadorModel.php');
 
 class TrabajadorController {
 
+    private $model;
+
     public function agregar(): void {
    
         $ci = $_POST["ci"];
@@ -18,9 +20,31 @@ class TrabajadorController {
         header("Location: ../views/dashboard/inicio.html");
 }
 
+    public function borrar(){
+        $ci = $_POST["ci"];
+        $model = new TrabajadorModel();
+        $model->borrarTrabajador($ci);
+
+        header("Location: ../views/dashboard/inicio.html");
+    }
+
     public function verTrabajadores() {
         $model = new TrabajadorModel();
-        return $model->verTrabajadores(); // devuelve array asociativo
+        return $model->verTrabajadores();
+    }
+
+    public function buscarPorCedula() {
+        $ci = $_POST["ci"];
+        $model = new TrabajadorModel();
+        return $model->buscarCedula($ci);
+        
+    }
+
+    public function buscarPorNombre(String $nombre) {
+        $nombre = $_POST["nombre"];
+        $model = new TrabajadorModel();
+        return $model->buscarNombre($nombre);
+
     }
 
     public function cambiarEstado(String $cedula, String $nuevoEstado): void {
@@ -70,30 +94,6 @@ class TrabajadorController {
         unset($_SESSION['trabajadores']);
         $_SESSION['trabajadores'] = [];
         echo "Se ha limpiado la lista de trabajadores.<br>";
-    }
-
-    public function buscarPorCedula(String $cedula) {
-        foreach ($_SESSION['trabajadores'] as $trabajador) {
-            if ($trabajador->getCedula() === $cedula) {
-                $_SESSION['trabajador_encontrado'] = $trabajador;
-                header("Location: ../app/views/trabajador/verTrabajador.php");
-                exit();
-            }
-        }
-        echo "No se encontró ningún trabajador con esa cédula.<br>";
-        return null;
-    }
-
-    public function buscarPorNombre(String $cedula) {
-        foreach ($_SESSION['trabajadores'] as $trabajador) {
-            if ($trabajador->getNombre() === $cedula) {
-                $_SESSION['trabajador_encontrado'] = $trabajador;
-                header("Location: ../app/views/trabajador/verTrabajador.php");
-                exit();
-            }
-        }
-        echo "No se encontró ningún trabajador con este nombre.<br>";
-        return null;
     }
 
 }

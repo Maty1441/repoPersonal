@@ -11,20 +11,19 @@
         <input type="hidden" name="c" value="TrabajadorController">
         <input type="hidden" name="a" value="buscarPorCedula">
 
-        <label for="id">Cedula del Trabajador a Buscar:</label>
-        <input type="text" id="cedula" name="cedula" required><br><br>
+        <label for="ci">Cedula del Trabajador a Buscar:</label>
+        <input type="text" id="ci" name="ci" required><br><br>
 
-        <button type="submit">Buscar Trabajador</button>
+        <button type="submit" name="buscarPorCedula" value="buscarPorCedula">Buscar Trabajador</button>
     </form>
     <br><br>
     <form action="../../core/routes.php" method="post">
         <input type="hidden" name="c" value="TrabajadorController">
         <input type="hidden" name="a" value="buscarPorNombre">
 
-        <label for="id">Nombre del Trabajador a Buscar:</label>
+        <label for="nombre">Nombre del Trabajador a Buscar:</label>
         <input type="text" id="nombre" name="nombre" required><br><br>
-
-        <button type="submit">Buscar Trabajador</button>
+        <button type="submit" name="buscarPorNombre" value="buscarPorNombre">Buscar Trabajador</button>
     </form>
 </body>
 </html>
