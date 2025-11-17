@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Estado</title>
+</head>
+<body>
+    <h1>Modificar Estador</h1>
+    <form action="../../core/routes.php" method="post">
+        <input type="hidden" name="c" value="TrabajadorController">
+        <input type="hidden" name="a" value="cambiarEstado">
+
+        <label for="id">Cedula del Trabajador:</label>
+        <input type="text" id="cedula" name="cedula" required><br><br>
+
+        <label for="estado">Estado:</label>
+            <select estado="select" id="estado" name="estado" required>
+                <option value="activo">Activo</option>
+                <option value="inactivo">Inactivo</option> 
+                <option value="suspendido">Suspendido</option> 
+            </select><br><br>
+        <button type="submit" name="formulario" value="modificar">Modificar Trabajador</button>
+    </form>
+</body>
+</html>
